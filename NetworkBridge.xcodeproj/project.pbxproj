@@ -10,10 +10,10 @@
 		07C81F3526FC792F00DFF730 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F3426FC792F00DFF730 /* main.swift */; };
 		07C81F3E26FC7A8600DFF730 /* CoatySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 07C81F3D26FC7A8600DFF730 /* CoatySwift */; };
 		07C81F4126FC7E5900DFF730 /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 07C81F4026FC7E5900DFF730 /* CocoaMQTT */; };
-		07C81F4626FC826900DFF730 /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4526FC826900DFF730 /* TaskDetails.swift */; };
-		07C81F4826FC827A00DFF730 /* TaskStatusUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */; };
+		07C81F4626FC826900DFF730 /* TasksDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4526FC826900DFF730 /* TasksDetails.swift */; };
 		07C81F4B26FC82A400DFF730 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4A26FC82A400DFF730 /* TimeUtil.swift */; };
 		07C81F4D26FC859C00DFF730 /* requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4C26FC859C00DFF730 /* requester.swift */; };
+		07C81F5126FCA24300DFF730 /* MissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F5026FCA24300DFF730 /* MissionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,10 +31,10 @@
 /* Begin PBXFileReference section */
 		07C81F3126FC792F00DFF730 /* NetworkBridge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NetworkBridge; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C81F3426FC792F00DFF730 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		07C81F4526FC826900DFF730 /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
-		07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusUpdate.swift; sourceTree = "<group>"; };
+		07C81F4526FC826900DFF730 /* TasksDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksDetails.swift; sourceTree = "<group>"; };
 		07C81F4A26FC82A400DFF730 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
 		07C81F4C26FC859C00DFF730 /* requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requester.swift; sourceTree = "<group>"; };
+		07C81F5026FCA24300DFF730 /* MissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 		07C81F4226FC824200DFF730 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				07C81F4526FC826900DFF730 /* TaskDetails.swift */,
-				07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */,
+				07C81F4526FC826900DFF730 /* TasksDetails.swift */,
+				07C81F5026FCA24300DFF730 /* MissionController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,9 +162,9 @@
 			files = (
 				07C81F3526FC792F00DFF730 /* main.swift in Sources */,
 				07C81F4D26FC859C00DFF730 /* requester.swift in Sources */,
-				07C81F4626FC826900DFF730 /* TaskDetails.swift in Sources */,
+				07C81F4626FC826900DFF730 /* TasksDetails.swift in Sources */,
+				07C81F5126FCA24300DFF730 /* MissionController.swift in Sources */,
 				07C81F4B26FC82A400DFF730 /* TimeUtil.swift in Sources */,
-				07C81F4826FC827A00DFF730 /* TaskStatusUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

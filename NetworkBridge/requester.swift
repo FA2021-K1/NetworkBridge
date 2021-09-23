@@ -7,7 +7,7 @@
 
 import Foundation
 
-func requestTasks() -> String {
+func requestTasks() -> TasksDetails {
     let url = URL(string: "http://127.0.0.1:5000/api/tasks/get_not_completed_tasks")!
     let semaphore = DispatchSemaphore(value: 0)
     var result = ""
@@ -27,7 +27,7 @@ func requestTasks() -> String {
 
     task.resume()
     semaphore.wait()
-    return result
+    return TasksDetails(json: result)
 }
 
 func postLiveData(data: String, droneId: String) {

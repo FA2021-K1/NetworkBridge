@@ -7,7 +7,7 @@
 import Foundation
 import CoatySwift
 
-final class TaskDetails: CoatyObject{
+final class TasksDetails: CoatyObject{
     
     // MARK: - Class registration.
     override class var objectType: String {
@@ -24,7 +24,7 @@ final class TaskDetails: CoatyObject{
     init(json:String) {
         self.jsonDetails=json
         super.init(coreType: .CoatyObject,
-                   objectType: TaskDetails.objectType,
+                   objectType: TasksDetails.objectType,
                    objectId: .init(),
                    name: "Task")
     }
@@ -47,4 +47,3 @@ final class TaskDetails: CoatyObject{
         try container.encode(jsonDetails, forKey: .jsonDetails)
     }
 }
-
