@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		07C81F3526FC792F00DFF730 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F3426FC792F00DFF730 /* main.swift */; };
+		07C81F3E26FC7A8600DFF730 /* CoatySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 07C81F3D26FC7A8600DFF730 /* CoatySwift */; };
+		07C81F4126FC7E5900DFF730 /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 07C81F4026FC7E5900DFF730 /* CocoaMQTT */; };
+		07C81F4626FC826900DFF730 /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4526FC826900DFF730 /* TaskDetails.swift */; };
+		07C81F4826FC827A00DFF730 /* TaskStatusUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */; };
+		07C81F4B26FC82A400DFF730 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4A26FC82A400DFF730 /* TimeUtil.swift */; };
+		07C81F4D26FC859C00DFF730 /* requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C81F4C26FC859C00DFF730 /* requester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,10 @@
 /* Begin PBXFileReference section */
 		07C81F3126FC792F00DFF730 /* NetworkBridge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NetworkBridge; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C81F3426FC792F00DFF730 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		07C81F4526FC826900DFF730 /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
+		07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusUpdate.swift; sourceTree = "<group>"; };
+		07C81F4A26FC82A400DFF730 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
+		07C81F4C26FC859C00DFF730 /* requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = requester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C81F4126FC7E5900DFF730 /* CocoaMQTT in Frameworks */,
+				07C81F3E26FC7A8600DFF730 /* CoatySwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +69,29 @@
 		07C81F3326FC792F00DFF730 /* NetworkBridge */ = {
 			isa = PBXGroup;
 			children = (
+				07C81F4926FC829C00DFF730 /* Util */,
+				07C81F4226FC824200DFF730 /* Model */,
 				07C81F3426FC792F00DFF730 /* main.swift */,
+				07C81F4C26FC859C00DFF730 /* requester.swift */,
 			);
 			path = NetworkBridge;
+			sourceTree = "<group>";
+		};
+		07C81F4226FC824200DFF730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07C81F4526FC826900DFF730 /* TaskDetails.swift */,
+				07C81F4726FC827A00DFF730 /* TaskStatusUpdate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		07C81F4926FC829C00DFF730 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				07C81F4A26FC82A400DFF730 /* TimeUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +110,10 @@
 			dependencies = (
 			);
 			name = NetworkBridge;
+			packageProductDependencies = (
+				07C81F3D26FC7A8600DFF730 /* CoatySwift */,
+				07C81F4026FC7E5900DFF730 /* CocoaMQTT */,
+			);
 			productName = NetworkBridge;
 			productReference = 07C81F3126FC792F00DFF730 /* NetworkBridge */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +142,10 @@
 				Base,
 			);
 			mainGroup = 07C81F2826FC792F00DFF730;
+			packageReferences = (
+				07C81F3C26FC7A8600DFF730 /* XCRemoteSwiftPackageReference "coaty-swift" */,
+				07C81F3F26FC7E5900DFF730 /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+			);
 			productRefGroup = 07C81F3226FC792F00DFF730 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07C81F3526FC792F00DFF730 /* main.swift in Sources */,
+				07C81F4D26FC859C00DFF730 /* requester.swift in Sources */,
+				07C81F4626FC826900DFF730 /* TaskDetails.swift in Sources */,
+				07C81F4B26FC82A400DFF730 /* TimeUtil.swift in Sources */,
+				07C81F4826FC827A00DFF730 /* TaskStatusUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +289,14 @@
 		07C81F3926FC792F00DFF730 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PLLZ436SG;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tum.in.ase.fa21.networkbridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -256,10 +304,14 @@
 		07C81F3A26FC792F00DFF730 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PLLZ436SG;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = de.tum.in.ase.fa21.networkbridge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -286,6 +338,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07C81F3C26FC7A8600DFF730 /* XCRemoteSwiftPackageReference "coaty-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/coatyio/coaty-swift";
+			requirement = {
+				branch = "spm-support";
+				kind = branch;
+			};
+		};
+		07C81F3F26FC7E5900DFF730 /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fa21-collaborative-drone-interactions/CocoaMQTT";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07C81F3D26FC7A8600DFF730 /* CoatySwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07C81F3C26FC7A8600DFF730 /* XCRemoteSwiftPackageReference "coaty-swift" */;
+			productName = CoatySwift;
+		};
+		07C81F4026FC7E5900DFF730 /* CocoaMQTT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07C81F3F26FC7E5900DFF730 /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 07C81F2926FC792F00DFF730 /* Project object */;
 }
