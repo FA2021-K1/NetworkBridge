@@ -18,7 +18,6 @@ func requestTasks() -> TasksDetails {
             return
         }
         let stringData = String(data: data, encoding: .utf8)!
-        print(stringData)
         
         result = stringData
         
@@ -27,15 +26,16 @@ func requestTasks() -> TasksDetails {
 
     task.resume()
     semaphore.wait()
+    print("Received tasks")
     return TasksDetails(json: result)
 }
 
-func postLiveData(data: String, droneId: String) {
+func postLiveData(data: String) {
     let urlSession = URLSession.shared
     let semaphore = DispatchSemaphore(value: 0)
 
     var request = URLRequest(
-        url: URL(string: "http://127.0.0.1:5000/api/drones/\(droneId)/live-info")!,
+        url: URL(string: "http://127.0.0.1:5000/api/drones/live-info-json")!,
         cachePolicy: .reloadIgnoringLocalCacheData
     )
     
@@ -45,7 +45,7 @@ func postLiveData(data: String, droneId: String) {
     let task = urlSession.dataTask(
         with: request,
         completionHandler: { data, response, error in
-            print("completed")
+            print("Live data posted")
             semaphore.signal()
         }
     )

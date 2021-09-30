@@ -7,7 +7,6 @@
 
 import Foundation
 import CoatySwift
-print("Hello, World!")
 
 //requestTasks()
 //postLiveData(data: """
@@ -20,7 +19,8 @@ if let configuration = createDroneCoatyConfiguration() {
     let components = Components(controllers: [
         "MissionController": MissionController.self
     ], objectTypes: [
-        TasksDetails.self
+        TasksDetails.self,
+        LiveData.self
     ])
     
     let container = Container.resolve(components: components,
@@ -55,8 +55,8 @@ func createDroneCoatyConfiguration() -> Configuration? {
         //
         // Note: Keep alive for the broker connection has been reduced to 10secs to minimize
         // connectivity issues when running with a remote public broker.
-        let mqttClientOptions = MQTTClientOptions(host: "localhost",
-                                                  port: 8080,
+        let mqttClientOptions = MQTTClientOptions(host: "192.168.1.194",
+                                                  port: 1883,
                                                   keepAlive: 10)
         config.communication = CommunicationOptions(namespace: "coaty.examples.remoteops",
                                                     mqttClientOptions: mqttClientOptions,

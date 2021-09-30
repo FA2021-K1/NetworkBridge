@@ -17,24 +17,20 @@ class MissionController: Controller {
     }
     
     override func onCommunicationManagerStarting() {
-         super.onCommunicationManagerStarting()
+        super.onCommunicationManagerStarting()
          
         try? communicationManager
-                    .observeAdvertise(withObjectType: "idrone.sync.task")
-                    .compactMap { advertiseEvent in
-                        advertiseEvent.data.object as? TasksDetails
-                    }
-                    .subscribe(onNext: { task in
-                        let tasks = requestTasks()
-                        
-                        // Send the updated task offer out and wait for the first response from a Service.
-                       try? self.communicationManager.publishUpdate(UpdateEvent.with(object: tasks))
-                           .take(1)
-                           .compactMap { completeEvent in
-                               print("hey")
-                           }
-                       }
-                    ).disposed(by: self.disposeBag)
+            .observeAdvertise(withObjectType: LiveData.objectType)
+                    .subscribe(onNext: { livedata in
+                        postLiveData(data: (livedata.data.object as! LiveData).jsonDetails)
+                    }).disposed(by: self.disposeBag)
+        
+
+        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            let event = try! AdvertiseEvent.with(object: requestTasks())
+            
+            try? self.communicationManager.publishAdvertise(event)
+        }
      }
     
     func publishMissionTimeout(retry: Bool = true){
